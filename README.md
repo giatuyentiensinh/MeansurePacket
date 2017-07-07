@@ -9,4 +9,10 @@ All file
 
  `Note` Create file `assets/output.csv` before you run project
 
+## Run
+
+- First run file `$ java RecvTCP`
+- Second run `$ java RecvUDPSendTCP`
+- Third run `$ java SendUDP`
+
 ## Auth: Tuyenng
