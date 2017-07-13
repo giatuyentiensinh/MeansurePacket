@@ -35,8 +35,9 @@ public class RecvUDPSendTCP {
 
 		int count = 0;
 		while (true) {
-			long beginTime = System.currentTimeMillis();
 			udpServer.receive(packet);
+
+			long beginTime = System.currentTimeMillis();
 			byte[] data = packet.getData();
 			String str = new String(data);
 
@@ -44,8 +45,8 @@ public class RecvUDPSendTCP {
 					Consts.TCPPORT);
 			OutputStreamWriter os = new OutputStreamWriter(
 					tcpClient.getOutputStream());
-			long endTime = System.currentTimeMillis();
 			os.write(str);
+			long endTime = System.currentTimeMillis();
 
 			long latency = endTime - beginTime;
 			System.out.println(str);
