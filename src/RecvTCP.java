@@ -9,18 +9,18 @@ public class RecvTCP {
 		ServerSocket tcpServer = new ServerSocket(Consts.TCPPORT);
 		System.out.println("RecvTCP was running ...");
 		int count = 0;
+		Socket server = tcpServer.accept();
+		BufferedReader is = new BufferedReader(new InputStreamReader(
+				server.getInputStream()));
 		while (true) {
-			Socket server = tcpServer.accept();
-			BufferedReader is = new BufferedReader(new InputStreamReader(
-					server.getInputStream()));
 			String line = is.readLine();
 			System.out.println("=========================");
 			System.out.println("[x] Recv: " + line);
-			server.close();
 			count++;
 			if (count == Consts.COUNT)
 				break;
 		}
+		server.close();
 		tcpServer.close();
 	}
 }

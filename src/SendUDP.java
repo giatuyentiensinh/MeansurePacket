@@ -69,7 +69,7 @@ public class SendUDP {
 			int latency = Integer.parseInt(datas[2])
 					- Integer.parseInt(datas[1]);
 			System.out.println("Latency: " + latency);
-			new SendUDP(Long.parseLong(datas[2]) / 10, datas[0]);
+			new SendUDP(Long.parseLong(datas[2]), datas[0]);
 			line = br.readLine();
 		}
 		br.close();
