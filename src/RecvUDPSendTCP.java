@@ -32,7 +32,16 @@ public class RecvUDPSendTCP {
 		osw = new OutputStreamWriter(tcpClient.getOutputStream());
 
 		// Init file
-		fw = new FileWriter(getClass().getResource(Consts.FILEOUT).getFile());
+
+		try {
+			fw = new FileWriter(RecvUDPSendTCP.class
+					.getResource(Consts.FILEOUT).getFile());
+		} catch (NullPointerException e) {
+			System.err.println("Find '" + Consts.FILEOUT + "' not found");
+			System.err.println("\u001B[1m You need create a file '"
+					+ Consts.FILEOUT + "' to completion program");
+			System.exit(0);
+		}
 		bw = new BufferedWriter(fw);
 		fr = new FileReader(getClass().getResource(Consts.FILE).getFile());
 		br = new BufferedReader(fr);

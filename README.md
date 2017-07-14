@@ -25,6 +25,8 @@ The file `output` format `MSG , timestamp from node sending , timestamp from bor
 ## Env
 
 - Buffer size: 128 MB
-- TCP packet size: 417 Bytes
+- TCP packet size: 90 - 20 = 70 Bytes
+
+![TCP packet size capture by wireshark](./packet.png)
 
 ## Auth: Tuyenng
