@@ -30,7 +30,7 @@ public class ClientTCP implements Runnable {
 			BufferedReader br = new BufferedReader(new FileReader(file));
 			// BufferedReader br = new BufferedReader(
 			// new FileReader(
-			// "/home/tuyenng/Documents/eclipseTesttmp/MeansurePacket/bin/assets/simulation_01_10node_5chs_60s.csv"));
+			// "/home/tuyenng/Documents/eclipseTesttmp/MeasurePacket/bin/assets/simulation_01_10node_5chs_60s.csv"));
 			String line = br.readLine();
 			while (line != null) {
 				String[] datas = line.split(",");
